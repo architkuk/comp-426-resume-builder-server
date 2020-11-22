@@ -68,6 +68,6 @@ MongoClient.connect(uri, {
 	});
 
 	app.listen(port, () => {
-		console.log(`Example app listening at http://localhost:${port}`);
+		console.log(`Resume Builder listening on https://comp426-resume-builder.herokuapp.com`);
 	});
 });

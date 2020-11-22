@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "gClient.js",
-  "engines": {
-    "node" : "10.15.3",
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -24,5 +21,8 @@
     "express": "^4.17.1",
     "googleapis": "^65.0.0",
     "mongodb": "^3.6.3"
+  },
+  "engines": {
+    "node" : "10.15.3"
   }
 }

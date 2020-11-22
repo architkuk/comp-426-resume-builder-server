@@ -5,7 +5,7 @@ const uri =
 
 const app = express();
 const gclient = require('./gClient.js');
-const port = 8080;
+const port = process.env.PORT || 3000
 
 MongoClient.connect(uri, {
 	useNewUrlParser: true,

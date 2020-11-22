@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000
 MongoClient.connect(uri, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
-}).then(async (client) => {
+}).then((client) => {
 	const db = client.db('resume-data');
 
 	app.use((req, res, next) => {
@@ -57,10 +57,9 @@ MongoClient.connect(uri, {
 		res.send('success');
 	});
 
-	app.post('/copy', async (req, res) => {
+	app.post('/copy', (req, res) => {
 		let template_id = '1AeMo9OIXlWWTmKmh2vp2Q_4JXUtMsF1rjFjpDuY6C9w';
-		const c = await gclient.copy(template_id, req.body.name);
-		c.then((res) => {
+		gclient.copy(template_id, req.body.name).then((res) => {
 			console.log(res);
 		}).catch((err) => {
 			console.log(err);

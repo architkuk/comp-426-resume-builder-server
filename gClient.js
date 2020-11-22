@@ -14,7 +14,7 @@ function authorize() {
 	return oAuth2Client;
 }
 
-async function update(DOCUMENT_ID) {
+function update(DOCUMENT_ID) {
 	const auth = await authorize();
 	const docs = google.docs({
 		version: 'v1',
@@ -45,7 +45,7 @@ async function update(DOCUMENT_ID) {
 	);
 }
 
-async function copy(DOCUMENT_ID, filename) {
+function copy(DOCUMENT_ID, filename) {
 	var copyTitle = `${filename}_resume`;
 	let request = {
 		name: copyTitle,
@@ -57,10 +57,12 @@ async function copy(DOCUMENT_ID, filename) {
 			fileId: DOCUMENT_ID,
 			resource: request,
 		},
-		(err, driveResponse) => {
-			let documentCopyId = driveResponse.data.id;
-			return driveResponse;
-		}
+		if(err){
+            		console.log(err);
+            		res.send('error');
+            		return;
+        	}
+        	res.send(response);
 	);
 }
 

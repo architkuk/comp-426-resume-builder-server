@@ -51,7 +51,7 @@ MongoClient.connect(uri, {
 	// update existing info
 	app.put('/', (req, res) => {
 		db.collection('users').updateOne(
-			{ name: req.body.name },
+			{ name: req.body.email },
 			{ $set: req.body.data }
 		);
 		res.send('success');

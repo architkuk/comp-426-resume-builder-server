@@ -4,7 +4,7 @@ const uri =
 	'mongodb+srv://dbUser:6unN2a7qWUwKTFpF@resume-data.6jeoc.mongodb.net/resume-builder?retryWrites=true&w=majority';
 
 const app = express();
-const gclient = require('./gClient.js');
+//const gclient = require('./gClient.js');
 const port = process.env.PORT || 3000
 
 MongoClient.connect(uri, {
@@ -57,14 +57,14 @@ MongoClient.connect(uri, {
 		res.send('success');
 	});
 
-	app.post('/copy', (req, res) => {
+	/*app.post('/copy', (req, res) => {
 		let template_id = '1AeMo9OIXlWWTmKmh2vp2Q_4JXUtMsF1rjFjpDuY6C9w';
 		gclient.copy(template_id, req.body.name).then((res) => {
 			console.log(res);
 		}).catch((err) => {
 			console.log(err);
 		});
-	});
+	});*/
 
 	app.listen(port, () => {
 		console.log(`Resume Builder listening on https://comp426-resume-builder.herokuapp.com`);

@@ -31,7 +31,7 @@ MongoClient.connect(uri, {
 			.findOne(req.query)
 			.then((response) => {
 				console.log(response);
-				res.send(response);
+				res.status(200).send('success');
 			})
 			.catch((err) => {
 				console.log(err);
@@ -43,7 +43,7 @@ MongoClient.connect(uri, {
 	app.post('/', (req, res) => {
 		//console.log(req.body.name);
 		db.collection('users').insertOne(req.body);
-		res.send('success');
+		res.status(200).send('success');
 	});
 
 	// Archit new:

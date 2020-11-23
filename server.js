@@ -54,7 +54,7 @@ MongoClient.connect(uri, {
 			{ name: req.body.email },
 			{ $set: req.body.data }
 		);
-		res.send('success');
+		res.status(200).send('success');
 	});
 
 	/*app.post('/copy', (req, res) => {

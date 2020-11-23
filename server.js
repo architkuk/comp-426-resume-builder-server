@@ -57,14 +57,15 @@ MongoClient.connect(uri, {
 		res.status(200).send('success');
 	});
 
-	/*app.post('/copy', (req, res) => {
-		let template_id = '1AeMo9OIXlWWTmKmh2vp2Q_4JXUtMsF1rjFjpDuY6C9w';
+	app.post('/copy', (req, res) => {
+		res.status(200).send('success');
+		/*let template_id = '1AeMo9OIXlWWTmKmh2vp2Q_4JXUtMsF1rjFjpDuY6C9w';
 		gclient.copy(template_id, req.body.name).then((res) => {
 			console.log(res);
 		}).catch((err) => {
 			console.log(err);
-		});
-	});*/
+		});*/
+	});
 
 	app.listen(port, () => {
 		console.log(`Resume Builder listening on https://comp426-resume-builder.herokuapp.com`);

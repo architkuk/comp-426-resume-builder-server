@@ -91,7 +91,7 @@ async function api(client) {
 
 	app.post('/copy', async (req, res) => {
 		let folderId = '1tI63lP4wLCHtjh8lZXYOIHsxXINljATn';
-		let templateId = req.body.templateId;
+		let templateId = '1AeMo9OIXlWWTmKmh2vp2Q_4JXUtMsF1rjFjpDuY6C9w';
 		const auth = await authorize();
 		const drive = google.drive({ version: 'v3', auth });
 

@@ -124,6 +124,7 @@ async function api(client) {
 			auth,
 		});
 		let reqData = [];
+		console.log(req);
 		let DOCUMENT_ID = req.body.id;
 		for (element in req.body.data) {
 			reqData.push({

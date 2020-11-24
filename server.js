@@ -71,7 +71,7 @@ async function api(client) {
 	// delete user by email
 	app.delete('/', (req, res) => {
 		db.collection('users')
-			.deleteOne({ email: req.data.email })
+			.deleteOne(req.query)
 			.then(res.status(200).send('success'))
 			.catch((err) => {
 				console.log(err);

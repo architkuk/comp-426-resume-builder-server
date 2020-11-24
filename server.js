@@ -73,7 +73,7 @@ async function api(client) {
 	// update existing info
 	app.put('/', (req, res) => {
 		db.collection('users')
-			.updateOne({ name: req.body.name }, { $set: req.body.data })
+			.updateOne({ email: req.body.email }, { $set: req.body.data })
 			.then(res.status(200).send('success'))
 			.catch((err) => {
 				console.log(err);

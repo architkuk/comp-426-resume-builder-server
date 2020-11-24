@@ -67,8 +67,17 @@ async function api(client) {
 				res.status(500).send('Database Error');
 			});
 	});
-
-	// Archit new:
+	
+	// delete user by email
+	app.delete('/', (req, res) => {
+		db.collection('users')
+			.deleteOne({ email: req.body.email })
+			.then(res.status(200).send('success'))
+			.catch((err) => {
+				console.log(err);
+				res.status(500).send('Database Error');
+			});
+	});
 
 	// update existing info
 	app.put('/', (req, res) => {
